@@ -1,0 +1,48 @@
+.my-paragraph {
+    /* padding: 0 200px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    z-index: 10000;
+    background-color: #f7d22d;
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+/* === Enter Transition === */
+.myclass-enter {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.myclass-enter-active {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.myclass-enter-done {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+@media (max-height: 768px) {
+    .my-paragraph {
+        height: 768px;
+        overflow: auto;
+    }
+    .my-paragraph ul {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        padding: 0;
+        font-size: 16px;
+    }
+    .my-paragraph ul hr {
+        grid-column-start: 1;
+        grid-column-end: -1;
+    }
+}
